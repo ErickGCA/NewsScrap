@@ -46,21 +46,18 @@ def resumir_noticia(texto):
 
     client = openai.OpenAI(api_key=api_key)
 
-    tentativas = 3  # Tentar no máximo 3 vezes antes de desistir
-
+    tentativas = 3 
     for tentativa in range(tentativas):
         try:
             response = client.chat.completions.create(
                 model="gpt-3.5-turbo",
-                messages=[{"role": "system", "content": "Resuma o seguinte texto:"}, {"role": "user", "content": texto[:1000]}],  # Reduz tamanho do texto
-                max_tokens=100  # Reduz resposta
-            )
+                messages=[{"role": "system", "content": "Resuma o seguinte texto:"}, {"role": "user", "content": texto[:1000]}],  
+                max_tokens=100  
             return response.choices[0].message.content.strip()
 
         except openai.RateLimitError:
             print(f"Limite de requisições excedido. Tentando novamente em 2 minutos... ({tentativa + 1}/{tentativas})")
-            time.sleep(120)  # Espera 2 minutos
-
+            time.sleep(120)  
     return "Não foi possível obter o resumo após várias tentativas."
 
 
