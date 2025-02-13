@@ -27,7 +27,7 @@ pip install requests beautifulsoup4 openai python-dotenv
    ```
 3. Run the script:
    ```bash
-   python script.py
+   python newscrap.py
    ```
 
 ## Usage
