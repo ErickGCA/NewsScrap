@@ -18,8 +18,8 @@ pip install requests beautifulsoup4 openai python-dotenv
 ## Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/news-scraper.git
-   cd news-scraper
+   git clone https://github.com/ErickGCA/NewsScrap.git
+   cd NewsScrap
    ```
 2. Create a `.env` file and add your OpenAI API key:
    ```plaintext
